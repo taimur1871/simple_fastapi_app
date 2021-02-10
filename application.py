@@ -12,23 +12,10 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
 # 2. Create app and model objects
-app = FastAPI()
-
-# 2. Create app and model objects
-app = FastAPI()
-app.mount("/static", StaticFiles(directory="static"), name="static")
-templates = Jinja2Templates(directory="templates/")
-
-#3. Welcome page
-@app.get("/", response_class=HTMLResponse)
-async def read_root(request:Request):
-    return templates.TemplateResponse("welcome.html", {"request": request, "message":"message"})
-
-@app.post("/uploads")
-async def create_upload_file(request:Request):
-    
-    return templates.TemplateResponse("upload_page.html", {"request": request})
+application = FastAPI()
+#application.mount("/static", StaticFiles(directory="static"), name="static")
+#templates = Jinja2Templates(directory="templates/")
 
 # 1. Run the API with uvicorn
 if __name__ == '__main__':
-    uvicorn.run('main:app', host='0.0.0.0', port=80)
+    uvicorn.run('main:app', host='127.0.0.1', port=8000)
