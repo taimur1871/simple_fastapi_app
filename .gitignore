@@ -1,0 +1,3 @@
+# cython file
+*.pyc
+__pycache__
