@@ -5,8 +5,6 @@ Created on Tue Jan 26
 """
 
 # 1. Library imports
-#from starlette.responses import FileResponse
-import uvicorn
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
